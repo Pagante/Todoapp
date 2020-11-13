@@ -12,6 +12,16 @@
     <div class="container pt-2">
         <h3 class="text-primary">Hello World!</h3>
         <p>I am set to build a Todo App</p>
+
+        <ul class="list-group t20">
+            {% for TodoList in todo_items %}
+                {% if TodoList.completed %}
+                <li class="list-group-item" >{{ TodoList.text }}</li>
+                {% else %}
+                <a href="#"><li class="list-group-item">{{ TodoList.text }}</li></a>
+                {% endif %}
+            {% endfor %}
+        </ul>
     </div>
 </body>
 </html>
